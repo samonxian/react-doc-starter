@@ -1,0 +1,55 @@
+.playgroundContainer {
+  margin-bottom: 1rem;
+  border: 1px solid var(--ifm-code-box-border-color);
+}
+
+.playgroundContent {
+  padding: 1rem;
+  border-bottom: 0;
+  background-color: #fff;
+}
+
+.playgroundIDE {
+  background-color: var(--ifm-code-box-border-color);
+}
+
+:global {
+  :local(.playgroundIDE) {
+    .margin-vert--md {
+      margin: 0 !important;
+    }
+
+    > div {
+      margin: 0;
+    }
+  }
+
+  :local(.playgroundContainer) .prism-code {
+    border-radius: 0;
+  }
+}
+
+.codeBoxActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px dashed var(--ifm-code-box-border-color);
+  padding: 0.5rem 1rem;
+}
+
+.codeExpandIcon {
+  cursor: pointer;
+  opacity: 0.75;
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  margin-left: 16px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.codeExpandIcon:hover {
+  opacity: 1;
+}
