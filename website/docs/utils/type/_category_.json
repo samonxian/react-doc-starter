@@ -1,5 +1,8 @@
 {
   "position": 3,
+  "label": "类型判断",
+  "collapsible": true,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "类型判断 Utils"

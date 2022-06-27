@@ -12,6 +12,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -68,7 +69,6 @@ const config = {
     './plugins/mdx',
     './plugins/tsdoc',
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -102,11 +102,11 @@ const config = {
         disableSwitch: true,
         respectPrefersColorScheme: true,
       },
-      // algolia: {
-      //   appId: 'X1Z85QJPUV',
-      //   apiKey: 'bf7211c161e8205da2f933a02534105a',
-      //   indexName: 'docusaurus-2',
-      // },
+      algolia: {
+        appId: 'X1Z85QJPUV',
+        apiKey: 'bf7211c161e8205da2f933a02534105a',
+        indexName: 'react-doc-starter',
+      },
       // 页脚不需要可以不配置
       footer: {
         style: 'dark',
