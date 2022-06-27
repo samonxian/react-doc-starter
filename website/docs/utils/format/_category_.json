@@ -1,5 +1,8 @@
 {
   "position": 3,
+  "label": "格式工具",
+  "collapsible": true,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "格式化工具 Utils"

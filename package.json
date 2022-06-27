@@ -26,7 +26,8 @@
     "start": "npm run dev -prefix ./website",
     "build": "lerna run build",
     "bootstrap": "lerna bootstrap --ignore-scripts",
-    "build:publish": "npm run build && lerna publish"
+    "build:publish": "npm run build && lerna publish",
+    "deploy": "npm run deploy -prefix ./website"
   },
   "config": {
     "commitizen": {

@@ -1,0 +1,9 @@
+{
+  "position": 1,
+  "label": "数据展示",
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index"
+  }
+}

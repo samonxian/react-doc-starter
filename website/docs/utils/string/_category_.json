@@ -1,5 +1,8 @@
 {
   "position": 4,
+  "label": "字符串工具",
+  "collapsible": true,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "字符串工具 Utils"

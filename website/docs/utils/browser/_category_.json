@@ -1,5 +1,8 @@
 {
   "position": 2,
+  "label": "页面工具",
+  "collapsible": true,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "页面操作 Utils"

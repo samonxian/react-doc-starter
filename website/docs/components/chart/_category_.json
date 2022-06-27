@@ -1,0 +1,9 @@
+{
+  "position": 2,
+  "label": "图表组件",
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index"
+  }
+}
