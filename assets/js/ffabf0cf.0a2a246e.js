@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[3195],{58287:e=>{e.exports=JSON.parse('[{"label":"react-doc-starter","permalink":"/react-doc-starter/blog/tags/react-doc-starter","count":1}]')}}]);
