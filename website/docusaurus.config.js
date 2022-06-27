@@ -32,24 +32,41 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          path: 'docs/components',
+          routeBasePath: 'components',
+          sidebarPath: require.resolve('./componentsSidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/samonxian/react-doc-starter/tree/master/',
+          editUrl: 'https://github.com/samonxian/react-doc-starter/tree/master',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/samonxian/react-doc-starter/tree/master/',
+          editUrl: 'https://github.com/samonxian/react-doc-starter/tree/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
+  ],
+  plugins: [
+    [
+      'content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'utils',
+        path: 'docs/utils',
+        routeBasePath: 'utils',
+        editUrl: 'https://github.com/samonxian/react-doc-starter/tree/master',
+        sidebarPath: require.resolve('./utilsSidebars.js'),
+      }),
+    ],
+    './plugins/less',
+    './plugins/alias',
+    './plugins/mdx',
+    './plugins/tsdoc',
   ],
 
   themeConfig:
@@ -63,12 +80,16 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
+            to: '/components/intro',
             label: '组件',
+            position: 'left',
           },
-          {to: '/blog', label: '博客', position: 'right'},
+          {
+            to: '/utils/intro',
+            label: 'Utils',
+            position: 'left',
+          },
+          { to: '/blog', label: '博客', position: 'right' },
           {
             href: 'https://github.com/samonxian/react-doc-starter',
             label: 'GitHub',
@@ -76,6 +97,16 @@ const config = {
           },
         ],
       },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: true,
+      },
+      // algolia: {
+      //   appId: 'X1Z85QJPUV',
+      //   apiKey: 'bf7211c161e8205da2f933a02534105a',
+      //   indexName: 'docusaurus-2',
+      // },
       // 页脚不需要可以不配置
       footer: {
         style: 'dark',
@@ -85,7 +116,7 @@ const config = {
             items: [
               {
                 label: '组件介绍',
-                to: '/docs/intro',
+                to: '/components/intro',
               },
             ],
           },

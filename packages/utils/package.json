@@ -1,0 +1,30 @@
+{
+  "version": "0.0.0",
+  "name": "business-utils",
+  "author": "samonxian",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
+  "dependencies": {
+    "camelcase": "7.0.0"
+  },
+  "devDependencies": {
+    "moment": "2.29.3",
+    "eslint": "8.18.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.12"
+  },
+  "scripts": {
+    "eslint": "eslint src/**/*.js src/**/*.ts src/**/*.jsx src/**/*.tsx --no-error-on-unmatched-pattern",
+    "tsc:es": "tsc --declarationDir es",
+    "tsc:lib": "tsc --declarationDir lib",
+    "tsc": "npm run tsc:lib && npm run tsc:es",
+    "clean": "rimraf lib es dist",
+    "build": "npm run clean && npm run tsc && vite build --mode prod && vite build --mode prod.lib"
+  }
+}

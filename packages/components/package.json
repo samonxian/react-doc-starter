@@ -1,0 +1,42 @@
+{
+  "version": "0.0.0",
+  "name": "react-antd-business-components",
+  "author": "samonxian",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "dist",
+    "lib",
+    "es"
+  ],
+  "scripts": {
+    "eslint": "eslint src/**/*.js src/**/*.ts src/**/*.jsx src/**/*.tsx --no-error-on-unmatched-pattern",
+    "tsc:es": "tsc --declarationDir es",
+    "tsc:lib": "tsc --declarationDir lib",
+    "tsc": "npm run tsc:lib && npm run tsc:es",
+    "clean": "rimraf lib es dist",
+    "build": "npm run clean && npm run tsc && vite build --mode prod && vite build --mode prod.lib"
+  },
+  "dependencies": {
+    "business-utils": "0.0.0",
+    "recharts": "2.1.10",
+    "recharts-scale": "0.4.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@types/recharts": "^1.8.23",
+    "@types/recharts-scale": "^1.0.0",
+    "vite": "^2.9.12",
+    "@vitejs/plugin-react": "^1.3.2",
+    "antd": "4.21.3",
+    "classnames": "2.3.1",
+    "decamelize": "4.0.0",
+    "less": "^4.1.3",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.4"
+  }
+}

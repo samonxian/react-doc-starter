@@ -1,4 +1,4 @@
 {
-  "*.{json,js,jsx,ts,tsx,md,html,css,less}": "prettier --list-different",
+  "*.{json,js,jsx,ts,tsx,md,html,css,less}": "prettier --write",
   "*.{js,jsx}": "eslint"
 }

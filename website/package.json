@@ -27,6 +27,11 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.0.0-beta.21",
     "@tsconfig/docusaurus": "^1.0.5",
+    "less": "^4.1.3",
+    "less-loader": "^7.3.0",
+    "marksy": "^8.0.0",
+    "ts-doc-webpack-loader": "1.0.0",
+    "react-docgen-webpack-loader": "1.0.2",
     "typescript": "^4.6.4"
   },
   "browserslist": {
