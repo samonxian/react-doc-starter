@@ -4,8 +4,8 @@
   <ShortName>业务组件文档</ShortName>
   <Description>Search 业务组件文档</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://your-docusaurus-test-site.com/react-doc-starter/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://your-docusaurus-test-site.com/react-doc-starter/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://your-docusaurus-test-site.com/react-doc-starter/opensearch.xml" />
-  <moz:SearchForm>https://your-docusaurus-test-site.com/react-doc-starter/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://samonxian.github.io/react-doc-starter/react-doc-starter/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://samonxian.github.io/react-doc-starter/react-doc-starter/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://samonxian.github.io/react-doc-starter/react-doc-starter/opensearch.xml" />
+  <moz:SearchForm>https://samonxian.github.io/react-doc-starter/react-doc-starter/</moz:SearchForm>
 </OpenSearchDescription>
