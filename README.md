@@ -2,9 +2,7 @@
 
 **React Doc Starter 适合组内或者部门内沉淀前端项目的业务组件和业务 Utilis。**
 
-React 文档项目是基于 facebook [docusaurus 2](https://docusaurus.io/)，详细的用法可以查看官方文档。
-
-同时基于 [react-docgen-webpack-loader](https://github.com/samonxian/ts-doc-webpack-loader) 和 [react-docgen-webpack-loader](https://github.com/samonxian/react-docgen-webpack-loader)，
+`React Doc Starter` 是基于 facebook [docusaurus 2](https://docusaurus.io/)，详细的用法可以查看官方文档。
 
 结合业务组件和 Utils 类库开发的流程，提供一套可直接使用的 React 组件库和 Utils 类库开发解决方案。
 
@@ -55,13 +53,21 @@ $ npm run build
 
 此命令将静态内容生成 `build` 目录，并可以使用任何静态内容托管服务提供服务。
 
+## 发布到 npm
+
+```shell
+$ npm run build:publish
+```
+
+此命令先运行 `npm run build` 打包 components 和 utils，然后运行 `lerna publish` 进行多包发布。
+
 ## Github pages 快捷部署
 
 使用 SSH:
 
 ```shell
 $ cd ./website # 确保进入 website 文件夹
-$ USE_SSH=true npm run deploy
+$ npm run deploy
 ```
 
 不使用 SSH:
