@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "dev": "docusaurus start",
-    "build": "docusaurus build",
+    "build:doc": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -31,7 +31,7 @@
     "less": "^4.1.3",
     "less-loader": "^7.3.0",
     "marksy": "^8.0.0",
-    "ts-doc-webpack-loader": "1.0.0",
+    "ts-doc-webpack-loader": "1.0.1",
     "react-docgen-webpack-loader": "1.0.2",
     "typescript": "^4.6.4"
   },
