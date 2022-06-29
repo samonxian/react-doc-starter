@@ -9,9 +9,7 @@ tags: [react-doc-starter]
 
 **React Doc Starter 适合组内或者部门内沉淀前端项目的业务组件和业务 Utilis。**
 
-React 文档项目是基于 facebook [docusaurus 2](https://docusaurus.io/)，详细的用法可以查看官方文档。
-
-同时基于 [react-docgen-webpack-loader](https://github.com/samonxian/ts-doc-webpack-loader) 和 [react-docgen-webpack-loader](https://github.com/samonxian/react-docgen-webpack-loader)，
+`React Doc Starter` 是基于 facebook [docusaurus 2](https://docusaurus.io/)，详细的用法可以查看官方文档。
 
 结合业务组件和 Utils 类库开发的流程，提供一套可直接使用的 React 组件库和 Utils 类库开发解决方案。
 
