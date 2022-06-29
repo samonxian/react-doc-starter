@@ -17,8 +17,7 @@
     "prettier": "^2.7.1"
   },
   "scripts": {
-    "prepare": "husky install",
-    "postinstall": "npm run prepare && node ./postinstall.js",
+    "postinstall": "husky install && node ./postinstall.js",
     "cm": "git-cz",
     "lint-staged": "lint-staged --allow-empty",
     "commitlint": "commitlint --edit $1",
