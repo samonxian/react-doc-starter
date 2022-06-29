@@ -9,12 +9,17 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '业务组件文档',
-  url: 'https://your-docusaurus-test-site.com',
+  url: `https://samonxian.github.io${baseUrl}`,
   baseUrl,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   trailingSlash: true,
+
+  // 自定义的字段
+  customFields: {
+    demoSourceUrl: 'https://git.code.oa.com/clientless/sec/tree/master/website',
+  },
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

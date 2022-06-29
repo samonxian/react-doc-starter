@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: #1890ff;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -15,6 +15,7 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-emphasis-300: #f0f0f0;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,4 +28,86 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* 由于有些 css 代码全局影响了 UI 组件，所以要重置处理 */
+.markdown li + li {
+  margin-top: 0;
+}
+
+table thead tr {
+  border-bottom-color: unset;
+  border-bottom-style: unset;
+  border-bottom-width: unset;
+}
+
+table tr {
+  background-color: unset;
+  border-top: unset;
+}
+
+table td {
+  color: unset;
+}
+
+table th,
+table td {
+  border: unset;
+  padding: unset;
+}
+
+table tr:nth-child(2n) {
+  background-color: unset;
+}
+
+table {
+  border-collapse: unset;
+  display: table;
+  margin-bottom: unset;
+  overflow: unset;
+}
+
+table thead {
+  background-color: unset;
+}
+
+.markdown > table {
+  border-collapse: collapse;
+  margin-bottom: var(--ifm-spacing-vertical);
+  overflow: auto;
+}
+
+.markdown > table tr:nth-child(2n) {
+  background-color: var(--ifm-table-stripe-background);
+}
+
+.markdown > table {
+  display: inline-table;
+  margin: 0;
+  width: 100%;
+}
+
+.markdown > table td p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown > table thead tr {
+  border-bottom-color: var(--ifm-table-border-color);
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+
+.markdown > table tr {
+  background-color: var(--ifm-table-background);
+  border-top: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
+}
+
+.markdown > table td {
+  color: var(--ifm-table-cell-color);
+}
+
+.markdown > table th,
+.markdown > table td {
+  border: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
+  padding: var(--ifm-table-cell-padding);
 }
