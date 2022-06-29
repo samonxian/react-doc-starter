@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.1",
   "name": "business-utils",
   "author": "samonxian",
   "main": "lib/index.js",
@@ -13,8 +13,8 @@
     "camelcase": "7.0.0"
   },
   "devDependencies": {
-    "moment": "2.29.3",
     "eslint": "8.18.0",
+    "moment": "2.29.3",
     "rimraf": "^3.0.2",
     "typescript": "^4.6.4",
     "vite": "^2.9.12"
