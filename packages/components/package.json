@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.2",
   "name": "react-antd-business-components",
   "author": "samonxian",
   "main": "lib/index.js",
@@ -18,7 +18,7 @@
     "build": "npm run clean && npm run tsc && vite build --mode prod && vite build --mode prod.lib"
   },
   "dependencies": {
-    "business-utils": "^0.0.1",
+    "business-utils": "^0.0.2",
     "recharts": "2.1.10",
     "recharts-scale": "0.4.5"
   },
