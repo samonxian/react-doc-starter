@@ -255,7 +255,9 @@ export default ProContent;
 
 更多的用法可查看 [ts-doc-webpack-loader](https://github.com/samonxian/ts-doc-webpack-loader)。
 
-## alias
+## 其他新增的功能
+
+### alias
 
 可在 `./website/plugins/alias.js` 修改
 
@@ -264,3 +266,42 @@ export default ProContent;
 - `$components` 对应 `packages/components` 文件夹
 - `$utils` 对应 `packages/components` 文件夹
 - `$demo` 对应 `packages/components` 文件夹
+
+### 一些自定义字段
+
+#### demoSourceUrl Demo 的前缀链接
+
+可修改 `docusaurus.config.js` 文件中 `customFields.demoSourceUrl` 字段
+
+```json
+{
+  "customFields": {
+    "demoSourceUrl": "https://github.com/samonxian/react-doc-starter/tree/master/website",
+    "componentVersion": "0.01"
+  }
+}
+```
+
+#### CodeSandbox 配置依赖包
+
+可根据实际情况修改 `docusaurus.config.js` 文件中 `customFields.codeSandboxPacakgeConfig` 字段。
+
+```json
+{
+  "customFields": {
+    "codeSandboxPacakgeConfig": {
+      "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "antd": "4.21.3",
+        "classnames": "2.3.1",
+        "react-antd-business-components": "0.01"
+      },
+      "devDependencies": {
+        "less": "^4.1.3",
+        "less-loader": "^7.3.0"
+      }
+    }
+  }
+}
+```
