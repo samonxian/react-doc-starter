@@ -13,6 +13,24 @@ export type CodeSectionProps = {
 };
 
 export default function CodeSection({ language, replace, section, source, metastring }: CodeSectionProps) {
+  const lastSource = getSourceString(source, { replace, section });
+
+  return (
+    <components.pre>
+      <components.code
+        children={lastSource}
+        className={`language-${language}`}
+        mdxType="code"
+        originalType="code"
+        parentName="pre"
+        metastring={metastring}
+      />
+    </components.pre>
+  );
+}
+
+export function getSourceString(source, options: Record<string, any> = {}) {
+  const { section, replace } = options;
   let lastSource: string;
 
   // Unwrap ES module.
@@ -48,16 +66,5 @@ export default function CodeSection({ language, replace, section, source, metast
     lastSource += '\n';
   }
 
-  return (
-    <components.pre>
-      <components.code
-        children={lastSource}
-        className={`language-${language}`}
-        mdxType="code"
-        originalType="code"
-        parentName="pre"
-        metastring={metastring}
-      />
-    </components.pre>
-  );
+  return lastSource;
 }

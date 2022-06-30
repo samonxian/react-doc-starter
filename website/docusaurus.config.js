@@ -1,10 +1,12 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-const isProd = process.env.NODE_ENV === 'production';
-const baseUrl = isProd ? '/react-doc-starter/' : '/';
 
+const path = require('path');
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { version: componentVersion } = require(path.relative(__dirname, '../packages/components/package.json'));
+const isProd = process.env.NODE_ENV === 'production';
+const baseUrl = isProd ? '/react-doc-starter/' : '/';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -18,7 +20,22 @@ const config = {
 
   // 自定义的字段
   customFields: {
-    demoSourceUrl: 'https://git.code.oa.com/clientless/sec/tree/master/website',
+    // demo 的 github 文件源前缀
+    demoSourceUrl: 'https://github.com/samonxian/react-doc-starter/tree/master/website',
+    // codeSandbox package.json 配置，目前只支持 dependencies 和 devDependencies
+    codeSandboxPacakgeConfig: {
+      dependencies: {
+        react: '^17.0.2',
+        'react-dom': '^17.0.2',
+        antd: '4.21.3',
+        classnames: '2.3.1',
+        'react-antd-business-components': componentVersion,
+      },
+      devDependencies: {
+        less: '^4.1.3',
+        'less-loader': '^7.3.0',
+      },
+    },
   },
 
   // GitHub pages deployment config.
