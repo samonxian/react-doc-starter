@@ -4,9 +4,10 @@ import path from 'path';
 // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
 export const GLOBALS = {
   camelcase: 'Camelcase',
+  moment: 'Moment',
 };
 // 确保外部化处理那些你不想打包进库的依赖
-export const EXTERNAL = ['camelcase'];
+export const EXTERNAL = ['camelcase', 'moment'];
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {

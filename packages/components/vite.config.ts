@@ -12,9 +12,19 @@ export const GLOBALS = {
   classnames: 'Classnames',
   recharts: 'Recharts',
   'recharts-scale': 'RechartsScale',
+  'business-utils': 'BusinessUtils',
 };
 // 确保外部化处理那些你不想打包进库的依赖
-export const EXTERNAL = ['react/jsx-runtime', 'react', 'react-dom', 'antd', 'classnames', 'recharts', 'recharts-scale'];
+export const EXTERNAL = [
+  'react/jsx-runtime',
+  'react',
+  'react-dom',
+  'antd',
+  'classnames',
+  'recharts',
+  'recharts-scale',
+  'business-utils',
+];
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
