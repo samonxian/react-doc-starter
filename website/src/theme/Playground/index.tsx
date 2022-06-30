@@ -3,9 +3,13 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import { getParameters } from 'codesandbox/lib/api/define';
 
-import CodeSection from '../CodeSection';
-import Github from '../Github';
+import CodeSection, { getSourceString } from '../CodeSection';
+import CodeExpandSvg from './codeExpand.svg';
+import CodeCollapseSvg from './codeCollapse.svg';
+import CodeSandboxSvg from './codeSandbox.svg';
+import GithubSvg from './github.svg';
 
 import styles from './index.module.less';
 
@@ -31,7 +35,7 @@ export default function Playground({ fileList, sourceUrl, children }: Playground
   const [codeShowed, setCodeShowed] = useState(false);
   const toggleCode = () => setCodeShowed((s) => !s);
   const { siteConfig: { customFields = {} } = {} } = useDocusaurusContext();
-  const { demoSourceUrl = '' } = customFields;
+  const { demoSourceUrl = '', codeSandboxPacakgeConfig } = customFields;
 
   return (
     <BrowserOnly>
@@ -40,23 +44,24 @@ export default function Playground({ fileList, sourceUrl, children }: Playground
           <div className={styles.playgroundContainer}>
             <div className={styles.playgroundContent}>{children}</div>
             <div className={styles.codeBoxActions}>
+              {codeSandboxPacakgeConfig && fileList.length > 0 && (
+                <OpenCodeSandbox fileList={fileList} codeSandboxPacakgeConfig={codeSandboxPacakgeConfig} />
+              )}
               {codeShowed && (
-                <img
-                  alt="expand code"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg"
-                  className={styles.codeExpandIcon}
-                  onClick={toggleCode}
-                />
+                <span className={styles.svgIcon} onClick={toggleCode}>
+                  <CodeExpandSvg />
+                </span>
               )}
               {!codeShowed && (
-                <img
-                  alt="expand code"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg"
-                  className={styles.codeExpandIcon}
-                  onClick={toggleCode}
-                />
+                <span className={styles.svgIcon} onClick={toggleCode}>
+                  <CodeCollapseSvg />
+                </span>
               )}
-              {sourceUrl && <Github url={`${demoSourceUrl}/${sourceUrl}`} className={styles.codeExpandIcon} />}
+              {sourceUrl && (
+                <a href={`${demoSourceUrl}/${sourceUrl}`} target="_blank" className={styles.svgIcon} rel="noreferrer">
+                  <GithubSvg />
+                </a>
+              )}
             </div>
             {codeShowed && fileList?.length > 0 && (
               <div className={styles.playgroundIDE}>
@@ -65,12 +70,12 @@ export default function Playground({ fileList, sourceUrl, children }: Playground
                 )}
                 {fileList.length > 1 && (
                   <Tabs
-                    defaultValue={0}
+                    defaultValue="0"
                     values={fileList.map(({ fileName, fileSuffix }, index) => {
                       const value = `${fileName}.${fileSuffix}`;
                       return {
                         label: value,
-                        value: index,
+                        value: String(index),
                       };
                     })}
                   >
@@ -78,7 +83,7 @@ export default function Playground({ fileList, sourceUrl, children }: Playground
                       const value = `${fileName}.${fileSuffix}`;
 
                       return (
-                        <TabItem value={index} key={value}>
+                        <TabItem value={String(index)} key={value}>
                           <CodeSection language={fileSuffix} source={fileContent} />
                         </TabItem>
                       );
@@ -91,5 +96,84 @@ export default function Playground({ fileList, sourceUrl, children }: Playground
         );
       }}
     </BrowserOnly>
+  );
+}
+
+function OpenCodeSandbox(props: { fileList: FileListMap[]; codeSandboxPacakgeConfig: Record<string, any> }) {
+  const { fileList, codeSandboxPacakgeConfig } = props;
+  const { fileName: AppName } = fileList[0] || {};
+  const files = fileList
+    .filter((f) => {
+      if (f.fileSuffix === 'jsx') {
+        // 目前只处理 tsx 和 其他类型的文件，忽略 jsx
+        return false;
+      }
+      return true;
+    })
+    .reduce((acc, cur) => {
+      acc[`${cur.fileName}.${cur.fileSuffix}`] = {
+        content: getSourceString(cur.fileContent),
+        isBinary: false,
+      };
+      return acc;
+    }, {});
+
+  const onClick = () => {
+    const parameters = getParameters({
+      files: {
+        'sandbox.config.json': {
+          content: JSON.stringify(
+            {
+              template: 'create-react-app-typescript',
+            },
+            null,
+            2,
+          ),
+          isBinary: false,
+        },
+        'index.tsx': {
+          content: `
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'antd/dist/antd.css';
+import 'react-antd-business-components/dist/style.css';
+import App from './${AppName}';
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root'),
+);
+          `,
+          isBinary: false,
+        },
+        'package.json': {
+          content: JSON.stringify(
+            {
+              name: AppName,
+              main: 'index.tsx',
+              dependencies: {
+                ...codeSandboxPacakgeConfig.dependencies,
+              },
+              devDependencies: {
+                ...codeSandboxPacakgeConfig.devDependencies,
+              },
+            },
+            null,
+            2,
+          ),
+          isBinary: false,
+        },
+        ...files,
+      },
+    });
+
+    const url = `https://codesandbox.io/api/v1/sandboxes/define?parameters=${parameters}`;
+    window.open(url);
+  };
+
+  return (
+    <span className={styles.svgIcon} onClick={onClick}>
+      <CodeSandboxSvg />
+    </span>
   );
 }
