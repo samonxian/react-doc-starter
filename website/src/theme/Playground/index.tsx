@@ -131,6 +131,10 @@ function OpenCodeSandbox(props: { fileList: FileListMap[]; codeSandboxPacakgeCon
           ),
           isBinary: false,
         },
+        'index.html': {
+          content: '<div style="padding: 16px;" id="root"></div>',
+          isBinary: false,
+        },
         'index.tsx': {
           content: `
 import React from 'react';
