@@ -2,8 +2,8 @@
 const getJsxCodeAst = require('../utils/getJsxCodeAst');
 
 module.exports = function codeShow(source) {
-  const allCodeShowRegExp = /<CodeShow[\s\n][^>]+(?!\/>).>([^]*?)<\/CodeShow>/gi; // 格式为 <CodeShow ...><Example /></CodeShow>
-  const allCodeShowNoChildrenRegExp = /<CodeShow[\s\n][^>]*\/>/gi; // 格式为 <CodeShow .../>
+  const allCodeShowRegExp = /(```[^`]+)?<CodeShow[\s\n][^>]+(?!\/>).>([^]*?)<\/CodeShow>/gi; // 格式为 <CodeShow ...><Example /></CodeShow>
+  const allCodeShowNoChildrenRegExp = /(```[^`]+)?<CodeShow[\s\n][^>]*\/>/gi; // 格式为 <CodeShow .../>
   const sourceUrlRegExp = /demoSourceUrl:\s(.*)/;
   const sourceUrlMatch = source.match(sourceUrlRegExp);
   const matchedCode = source.match(allCodeShowRegExp);
@@ -15,13 +15,15 @@ module.exports = function codeShow(source) {
     const allMatchCode = (matchedCode || []).concat(matchedNoChildCode).filter(Boolean);
 
     allMatchCode.forEach((code) => {
-      const { source: replacedSource, extraImport: addImport } = replaceSource(
-        lastSource,
-        code,
-        sourceUrlMatch && sourceUrlMatch[1],
-      );
-      lastSource = replacedSource;
-      extraImport += addImport;
+      if (/^<CodeShow[*<]*/.test(code)) {
+        const { source: replacedSource, extraImport: addImport } = replaceSource(
+          lastSource,
+          code,
+          sourceUrlMatch && sourceUrlMatch[1],
+        );
+        lastSource = replacedSource;
+        extraImport += addImport;
+      }
     });
     // 替换可能多余的引入
     lastSource = lastSource.replace("import Playground from '@theme/Playground';", '');

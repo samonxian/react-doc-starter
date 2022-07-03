@@ -88,13 +88,13 @@ $ GIT_USER=<你的 GitHub 用户名> npm run deploy
 支持 file 和 fileList 属性（即文件路径），其中文件路径可以使用 alias。
 
 ```jsx
-<CodeShow. file="$demo/Image/Basic.tsx" />
+<CodeShow file="$demo/Image/Basic.tsx" />
 ```
 
 或者
 
 ```jsx
-<CodeShow. fileList={['$demo/Image/Basic.tsx']} />
+<CodeShow fileList={['$demo/Image/Basic.tsx']} />
 ```
 
 ### PropsTable 用法
@@ -105,7 +105,7 @@ $ GIT_USER=<你的 GitHub 用户名> npm run deploy
 头部注释到 md 文件开始处。
 
 ```jsx
-<PropsTable. src="$components/pro-content" showDescriptionOnSummary />
+<PropsTable src="$components/pro-content" showDescriptionOnSummary />
 ```
 
 ```ts

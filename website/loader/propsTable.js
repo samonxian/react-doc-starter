@@ -7,22 +7,24 @@ const resolve = require('../utils/resolve');
 
 module.exports = function propsTable(source) {
   const options = getOptions(this);
-  const allPropsTableRegExp = /(<PropsTable[\s\n][^>]*\/>)/g; // 格式为 <PropsTable .../>
+  const allPropsTableRegExp = /(```[^`]+)?<PropsTable[\s\n][^>]*\/>/gi; // 格式为 <PropsTable .../>
   const matchedCode = source.match(allPropsTableRegExp);
   let lastSource = source;
   let summary = '';
 
   if (matchedCode) {
     matchedCode.forEach((code) => {
-      const { source: replacedSource, src, description } = replaceSource.bind(this)(lastSource, code, options);
-      lastSource = replacedSource;
+      if (/^<PropsTable[*<]*/.test(code)) {
+        const { source: replacedSource, src, description } = replaceSource.bind(this)(lastSource, code, options);
+        lastSource = replacedSource;
 
-      if (src) {
-        this.addDependency(src);
-      }
+        if (src) {
+          this.addDependency(src);
+        }
 
-      if (description) {
-        summary = description;
+        if (description) {
+          summary = description;
+        }
       }
     });
 
