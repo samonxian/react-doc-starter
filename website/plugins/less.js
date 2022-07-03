@@ -32,10 +32,10 @@ module.exports = function (_, opt = {}) {
                           const match = context.resourcePath.replace(/\\/, '/').match(/.*\/src\/(.*)\/.*\.module\..*/);
 
                           if (match) {
-                            return `business-${decamelize(match[1], '-')}__${localName}`;
+                            return `rabc-${decamelize(match[1], '-')}__${localName}`;
                           }
 
-                          return `business-${localName}`;
+                          return `rabc-${localName}`;
                         },
                         exportLocalsConvention: 'camelCase',
                       },
