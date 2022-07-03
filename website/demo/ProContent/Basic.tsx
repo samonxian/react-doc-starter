@@ -1,10 +1,11 @@
 import React from 'react';
 import { Card } from 'antd';
 import { ProContent, Space } from 'react-antd-business-components';
+import './Basic.css';
 
 const Default = function () {
   return (
-    <div style={{ background: '#eee', padding: 16 }}>
+    <div className="pro-content-demo-container">
       <Space direction="vertical">
         <Card title="直接展示内容">
           <ProContent>内容区域</ProContent>
