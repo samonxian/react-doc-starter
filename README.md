@@ -6,7 +6,7 @@
 
 结合业务组件和 Utils 类库开发的流程，提供一套可直接使用的 React 组件库和 Utils 类库开发解决方案。
 
-目前组件和 Uitls 使用 `vite` 进行打包，只需要简单的配置即可实现打包。
+目前组件和 Uitls 使用 `vite` 进行打包，只需要简单的配置即可实现打包，细节可查看 `vite.config.ts` 文件。
 
 **Node 版本要求 >= v16，目前根据注释生成的文档不支持国际化的场景，国际化的场景需要根据 docusaurus 文档手动编写文档。**
 
@@ -305,3 +305,8 @@ export default ProContent;
   }
 }
 ```
+
+## 需要注意地方
+
+1. less 样式的前缀同步
+   `packages/components/vite.config.ts` 中设置的前缀需要和 `website/plugins/less.js` 的保持一致，这样 demo 中看到的 class 才是最终的 class。
