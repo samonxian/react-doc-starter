@@ -127,8 +127,8 @@ const config = {
         respectPrefersColorScheme: true,
       },
       algolia: {
-        appId: 'X1Z85QJPUV',
-        apiKey: 'bf7211c161e8205da2f933a02534105a',
+        appId: 'HXVGA2AMP0',
+        apiKey: 'ae77e0e03a0c15f379d31ceb50706ac7',
         indexName: 'react-doc-starter',
       },
       // 页脚不需要可以不配置
