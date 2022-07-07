@@ -25,6 +25,9 @@
     "tsc:lib": "tsc --declarationDir lib",
     "tsc": "npm run tsc:lib && npm run tsc:es",
     "clean": "rimraf lib es dist",
-    "build": "npm run clean && npm run tsc && vite build --mode prod && vite build --mode prod.lib"
+    "vite": "vite",
+    "build:lib": "vite build -c ./vite.lib.config.ts",
+    "build:file": "node ./scripts/buildFiles.js",
+    "build": "npm run eslint && npm run clean && npm run tsc && npm run build:file && npm run build:lib"
   }
 }
