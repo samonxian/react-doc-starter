@@ -310,3 +310,4 @@ export default ProContent;
 
 1. less 样式的前缀同步
    `packages/components/vite.config.ts` 中设置的前缀需要和 `website/plugins/less.js` 的保持一致，这样 demo 中看到的 class 才是最终的 class。
+2. 由于 vite 打包其实是使用 rollup 来打包，如果有新增的依赖包，UMD 打包的时候，可根据实际情况更新 `vite.lib.config.ts` 中 **EXTERNAL** 和 **GLOBALS**，否则新增的依赖包会一起打包进去。
