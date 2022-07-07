@@ -1,0 +1,42 @@
+.propsTable {
+  overflow-x: auto;
+}
+
+.propsTable table {
+  display: inline-table;
+  margin: 0;
+  width: 100%;
+}
+
+.propsTable table td p:last-child {
+  margin-bottom: 0;
+}
+
+.propsTable table thead tr {
+  border-bottom-color: var(--ifm-table-border-color);
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+
+.propsTable table tr {
+  background-color: var(--ifm-table-background);
+  border-top: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
+}
+
+.propsTable table td {
+  color: var(--ifm-table-cell-color);
+}
+.propsTable table th,
+.propsTable table td {
+  border: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
+  padding: var(--ifm-table-cell-padding);
+}
+
+.propsTable table tr:nth-child(2n) {
+  background-color: var(--ifm-table-stripe-background);
+}
+.propsTable table {
+  border-collapse: collapse;
+  margin-bottom: var(--ifm-spacing-vertical);
+  overflow: auto;
+}

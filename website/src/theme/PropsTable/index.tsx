@@ -1,7 +1,7 @@
 import React, { createElement, memo, useMemo } from 'react';
 import marksy from 'marksy';
 
-import styles from './index.module.less';
+import styles from './index.module.css';
 
 function PropsTable(props: { data: Record<string, any> }) {
   const { data } = props;
