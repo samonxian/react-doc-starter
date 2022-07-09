@@ -4,7 +4,6 @@
     "eslint": "8.18.0",
     "eslint-config-react-app": "7.0.1",
     "eslint-plugin-prettier": "4.0.0",
-    "cross-spawn": "7.0.3",
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
     "commitizen": "^4.2.4",
@@ -12,12 +11,10 @@
     "husky": "^8.0.1",
     "lerna": "^5.1.4",
     "lint-staged": "^13.0.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "prettier": "^2.7.1"
   },
   "scripts": {
-    "postinstall": "husky install && node ./postinstall.js",
+    "postinstall": "husky install && npm run bootstrap",
     "cm": "git-cz",
     "lint-staged": "lint-staged --allow-empty",
     "commitlint": "commitlint --edit $1",

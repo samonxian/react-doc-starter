@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/utils", "packages/components", "website"],
+  "packages": ["packages/*", "website"],
   "version": "0.0.3",
   "npmClient": "npm",
   "hoist": true

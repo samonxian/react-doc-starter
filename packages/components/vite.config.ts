@@ -3,29 +3,6 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import decamelize from 'decamelize';
 
-// 在 UMD 构建模式下为外部依赖提供一个全局变量
-export const GLOBALS = {
-  react: 'React',
-  'react-dom': 'ReactDOM',
-  'react/jsx-runtime': 'JsxRuntime',
-  antd: 'Antd',
-  classnames: 'Classnames',
-  recharts: 'Recharts',
-  'recharts-scale': 'RechartsScale',
-  'business-utils': 'BusinessUtils',
-};
-// 处理类库使用到的依赖
-export const EXTERNAL = [
-  'react/jsx-runtime',
-  'react',
-  'react-dom',
-  'antd',
-  'classnames',
-  'recharts',
-  'recharts-scale',
-  'business-utils',
-];
-
 export const commonConfig = defineConfig({
   plugins: [react()],
   css: {

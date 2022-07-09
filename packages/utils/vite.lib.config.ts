@@ -7,7 +7,8 @@ export const GLOBALS = {
   camelcase: 'Camelcase',
   moment: 'Moment',
 };
-// 处理类库使用到的依赖
+// 处理类库使用到的外部依赖
+// 确保外部化处理那些你不想打包进库的依赖
 export const EXTERNAL = ['camelcase', 'moment'];
 
 // https://vitejs.dev/config/
