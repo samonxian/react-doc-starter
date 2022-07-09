@@ -1,58 +1,32 @@
 import { defineConfig } from 'vite';
 import path from 'path';
+import { commonConfig } from './vite.file.config';
 
-export const commonConfig = defineConfig({
-  css: {
-    preprocessorOptions: {
-      less: {
-        javascriptEnabled: true,
-      },
-    },
-  },
-  resolve: {
-    alias: [
-      // fix less import by: @import ~
-      // less import no support webpack alias '~' · Issue #2185 · vitejs/vite
-      { find: /^~/, replacement: '' },
-    ],
-  },
-});
+// 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+export const GLOBALS = {
+  camelcase: 'Camelcase',
+  moment: 'Moment',
+};
+// 处理类库使用到的外部依赖
+// 确保外部化处理那些你不想打包进库的依赖
+export const EXTERNAL = ['camelcase', 'moment'];
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(() => {
   return {
+    ...commonConfig,
     build: {
       emptyOutDir: false,
       rollupOptions: {
-        external: (id) => {
-          if (id.includes('.less') || id.includes('.css') || id.includes('.svg')) {
-            return false;
-          }
-          return true;
-        },
-        output: [
-          {
-            file: `es/${mode.replace(/\.[jt]?sx?$/, '.js')}`,
-            indent: false,
-            exports: 'named',
-            format: 'es',
-            dir: undefined,
-          },
-          {
-            file: `lib/${mode.replace(/\.[jt]?sx?$/, '.js')}`,
-            indent: false,
-            exports: 'named',
-            format: 'cjs',
-            dir: undefined,
-          },
-        ],
+        external: EXTERNAL,
+        output: { globals: GLOBALS },
       },
       lib: {
-        // mode 特殊处理为文件名
-        entry: path.resolve(__dirname, 'src', mode),
-        name: 'noop', // 这里设置只有在 UMD 格式才有效，避免验证报错才设置的，在这里没用
+        entry: path.resolve(__dirname, 'src/index.ts'),
+        name: 'BusinessUtils',
+        fileName: (format) => `business-utils.${format}.js`,
       },
-      minify: false,
+      minify: true,
     },
   };
 });

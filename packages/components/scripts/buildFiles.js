@@ -7,9 +7,13 @@ const srcDir = path.resolve(__dirname, '../src');
 const srcFilePaths = getTargetDirFilePaths(srcDir);
 srcFilePaths.forEach((file) => {
   const fileRelativePath = path.relative(srcDir, file);
-  spawn('npm', ['run', 'vite', '--', 'build', '--mode', fileRelativePath, '--outDir', 'es'], {
-    stdio: 'inherit',
-  });
+  spawn(
+    'npm',
+    ['run', 'vite', '--', 'build', '--mode', fileRelativePath, '--outDir', 'es', '--config', './vite.file.config.ts'],
+    {
+      stdio: 'inherit',
+    },
+  );
 });
 
 /**

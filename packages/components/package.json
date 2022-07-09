@@ -16,7 +16,7 @@
     "tsc": "npm run tsc:lib && npm run tsc:es",
     "clean": "rimraf lib es dist",
     "vite": "vite",
-    "build:lib": "vite build -c ./vite.lib.config.ts",
+    "build:lib": "vite build",
     "build:file": "node ./scripts/buildFiles.js",
     "build": "npm run eslint && npm run clean && npm run tsc && npm run build:file && npm run build:lib"
   },
