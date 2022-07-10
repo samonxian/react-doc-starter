@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { defineConfig } from 'vite';
 import path from 'path';
 import { commonConfig } from './vite.file.config';
@@ -32,6 +34,10 @@ export default defineConfig(() => {
         fileName: (format) => `rbac-components.${format}.js`,
       },
       minify: true,
+    },
+    test: {
+      environment: 'happy-dom',
+      watch: false,
     },
   };
 });

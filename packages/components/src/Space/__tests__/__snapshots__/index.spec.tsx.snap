@@ -1,0 +1,29 @@
+// Vitest Snapshot v1
+
+exports[`Space rendered 1`] = `
+<div
+  className="ant-space ant-space-horizontal ant-space-align-center"
+  style={{}}
+>
+  <div
+    className="ant-space-item"
+    style={
+      {
+        "marginRight": 8,
+      }
+    }
+  >
+    <div>
+      1
+    </div>
+  </div>
+  <div
+    className="ant-space-item"
+    style={{}}
+  >
+    <div>
+      2
+    </div>
+  </div>
+</div>
+`;

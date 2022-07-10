@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { defineConfig } from 'vite';
 import path from 'path';
 import { commonConfig } from './vite.file.config';
@@ -12,7 +14,7 @@ export const GLOBALS = {
 export const EXTERNAL = ['camelcase', 'moment'];
 
 // https://vitejs.dev/config/
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
   return {
     ...commonConfig,
     build: {
@@ -27,6 +29,10 @@ export default defineConfig(() => {
         fileName: (format) => `business-utils.${format}.js`,
       },
       minify: true,
+    },
+    test: {
+      environment: 'happy-dom',
+      watch: false,
     },
   };
 });

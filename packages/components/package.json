@@ -15,6 +15,8 @@
     "tsc:lib": "tsc --declarationDir lib",
     "tsc": "npm run tsc:lib && npm run tsc:es",
     "clean": "rimraf lib es dist",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "vite": "vite",
     "build:lib": "vite build",
     "build:file": "node ./scripts/buildFiles.js",
@@ -28,6 +30,7 @@
   "devDependencies": {
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
+    "@types/react-test-renderer": "^18.0.0",
     "@types/recharts": "^1.8.23",
     "@types/recharts-scale": "^1.0.0",
     "@vitejs/plugin-react": "^1.3.2",
@@ -42,6 +45,9 @@
     "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.6.4",
+    "happy-dom": "^6.0.2",
+    "react-test-renderer": "^17.0.2",
+    "vitest": "^0.18.0",
     "vite": "^2.9.12"
   }
 }

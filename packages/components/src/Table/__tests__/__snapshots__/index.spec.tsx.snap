@@ -1,0 +1,467 @@
+// Vitest Snapshot v1
+
+exports[`ProContent rendered 1`] = `
+<div
+  className="ant-table-wrapper rabc-table__container"
+>
+  <div
+    className="ant-spin-nested-loading"
+  >
+    <div
+      className="ant-spin-container"
+    >
+      <div
+        className="ant-table ant-table-scroll-horizontal"
+      >
+        <div
+          className="ant-table-container"
+        >
+          <div
+            className="ant-table-content"
+            onScroll={[Function]}
+            style={
+              {
+                "overflowX": "auto",
+                "overflowY": "hidden",
+              }
+            }
+          >
+            <table
+              style={
+                {
+                  "minWidth": "100%",
+                  "tableLayout": "auto",
+                  "width": "auto",
+                }
+              }
+            >
+              <colgroup />
+              <thead
+                className="ant-table-thead"
+              >
+                <tr>
+                  <th
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      Name
+                    </div>
+                  </th>
+                  <th
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      Age
+                    </div>
+                  </th>
+                  <th
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      Address
+                    </div>
+                  </th>
+                  <th
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      Tags
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                className="ant-table-tbody"
+              >
+                <tr
+                  aria-hidden="true"
+                  className="ant-table-measure-row"
+                  style={
+                    {
+                      "fontSize": 0,
+                      "height": 0,
+                    }
+                  }
+                >
+                  <td
+                    style={
+                      {
+                        "border": 0,
+                        "height": 0,
+                        "padding": 0,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        {
+                          "height": 0,
+                          "overflow": "hidden",
+                        }
+                      }
+                    >
+                       
+                    </div>
+                  </td>
+                  <td
+                    style={
+                      {
+                        "border": 0,
+                        "height": 0,
+                        "padding": 0,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        {
+                          "height": 0,
+                          "overflow": "hidden",
+                        }
+                      }
+                    >
+                       
+                    </div>
+                  </td>
+                  <td
+                    style={
+                      {
+                        "border": 0,
+                        "height": 0,
+                        "padding": 0,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        {
+                          "height": 0,
+                          "overflow": "hidden",
+                        }
+                      }
+                    >
+                       
+                    </div>
+                  </td>
+                  <td
+                    style={
+                      {
+                        "border": 0,
+                        "height": 0,
+                        "padding": 0,
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        {
+                          "height": 0,
+                          "overflow": "hidden",
+                        }
+                      }
+                    >
+                       
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  className="ant-table-row ant-table-row-level-0"
+                  data-row-key="1"
+                  onClick={[Function]}
+                  style={{}}
+                >
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      <a>
+                        John Brown
+                      </a>
+                    </div>
+                  </td>
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      32
+                    </div>
+                  </td>
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      New York No. 1 Lake Park
+                    </div>
+                  </td>
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      nice
+                      developer
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  className="ant-table-row ant-table-row-level-0"
+                  data-row-key="2"
+                  onClick={[Function]}
+                  style={{}}
+                >
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      <a>
+                        Jim Green
+                      </a>
+                    </div>
+                  </td>
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      42
+                    </div>
+                  </td>
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      London No. 1 Lake Park
+                    </div>
+                  </td>
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      loser
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  className="ant-table-row ant-table-row-level-0"
+                  data-row-key="3"
+                  onClick={[Function]}
+                  style={{}}
+                >
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      <a>
+                        Joe Black
+                      </a>
+                    </div>
+                  </td>
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      32
+                    </div>
+                  </td>
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      Sidney No. 1 Lake ParkSidney No. 1 Lake Park
+                    </div>
+                  </td>
+                  <td
+                    className="ant-table-cell rabc-table__td-no-wrap"
+                    colSpan={null}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    rowSpan={null}
+                    style={{}}
+                  >
+                    <div
+                      style={
+                        {
+                          "width": undefined,
+                        }
+                      }
+                    >
+                      cool
+                      teacher
+                      smart
+                      long
+                      short
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
