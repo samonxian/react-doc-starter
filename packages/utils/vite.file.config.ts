@@ -1,23 +1,6 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 
-export const commonConfig = defineConfig({
-  css: {
-    preprocessorOptions: {
-      less: {
-        javascriptEnabled: true,
-      },
-    },
-  },
-  resolve: {
-    alias: [
-      // fix less import by: @import ~
-      // less import no support webpack alias '~' · Issue #2185 · vitejs/vite
-      { find: /^~/, replacement: '' },
-    ],
-  },
-});
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {

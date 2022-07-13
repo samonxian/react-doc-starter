@@ -2,7 +2,6 @@
 
 import { defineConfig } from 'vite';
 import path from 'path';
-import { commonConfig } from './vite.file.config';
 
 // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
 export const GLOBALS = {
@@ -16,7 +15,6 @@ export const EXTERNAL = ['camelcase', 'moment'];
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
-    ...commonConfig,
     build: {
       emptyOutDir: false,
       rollupOptions: {
