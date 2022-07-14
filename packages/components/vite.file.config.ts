@@ -9,10 +9,14 @@ export const commonConfig = defineConfig({
     modules: {
       localsConvention: 'camelCaseOnly',
       generateScopedName: (name: string, filename: string) => {
-        const match = filename.replace(/\\/, '/').match(/.*\/src\/(.*)\/.*\.module\..*/);
+        const match = filename.replace(/\\/, '/').match(/.*\/src\/(.*)\/(.*)\.module\..*/);
 
         if (match) {
-          return `rabc-${decamelize(match[1], '-')}__${name}`;
+          let prefixName = match[1].replace(/\//g, '-');
+          if (match[2] !== 'index') {
+            prefixName += `-${match[2]}`;
+          }
+          return `rabc-${decamelize(prefixName, '-')}__${name}`;
         }
 
         return `rabc-${name}`;

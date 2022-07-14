@@ -29,10 +29,16 @@ module.exports = function (_, opt = {}) {
                       modules: {
                         mode: 'local',
                         getLocalIdent: (context, _, localName) => {
-                          const match = context.resourcePath.replace(/\\/, '/').match(/.*\/src\/(.*)\/.*\.module\..*/);
+                          const match = context.resourcePath
+                            .replace(/\\/, '/')
+                            .match(/.*\/src\/(.*)\/(.*)\.module\..*/);
 
                           if (match) {
-                            return `rabc-${decamelize(match[1], '-')}__${localName}`;
+                            let prefixName = match[1].replace(/\//g, '-');
+                            if (match[2] !== 'index') {
+                              prefixName += `-${match[2]}`;
+                            }
+                            return `rbac-${decamelize(prefixName, '-')}__${localName}`;
                           }
 
                           return `rabc-${localName}`;
