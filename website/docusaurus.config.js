@@ -62,13 +62,13 @@ const config = {
           sidebarPath: require.resolve('./componentsSidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/samonxian/react-doc-starter/tree/master',
+          editUrl: 'https://github.com/samonxian/react-doc-starter/tree/master/webiste',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/samonxian/react-doc-starter/tree/master/',
+          editUrl: 'https://github.com/samonxian/react-doc-starter/tree/master/webiste',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -84,7 +84,7 @@ const config = {
         id: 'utils',
         path: 'docs/utils',
         routeBasePath: 'utils',
-        editUrl: 'https://github.com/samonxian/react-doc-starter/tree/master',
+        editUrl: 'https://github.com/samonxian/react-doc-starter/tree/master/webiste',
         sidebarPath: require.resolve('./utilsSidebars.js'),
       }),
     ],
