@@ -46,10 +46,19 @@ $ npm start
 
 `npm start` 后就可以通过 [http://localhost:3000/](http://localhost:3000/) 访问文档。
 
+然后代码开发直接在 package/components 和 packages/utils 文件下添加相应文件即可。
+
+**注意**：
+由于 components 分包使用到 utils 分包，所以需要先构建 utils 分包，ts import 路径才不会爆红（不影响开发，单最好先构建）。
+
+```
+$ cd packages/utils
+$ npm run build
+```
+
 ## 构建
 
 ```shell
-$ npm run build # 根目录先构建 components 和 utils 分包，确保 utils 分包构建因为 components 使用到 utils 分包
 $ cd ./website # 确保进入 website 文件夹
 $ npm run build
 ```
