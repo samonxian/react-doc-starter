@@ -49,6 +49,7 @@ $ npm start
 ## 构建
 
 ```shell
+$ npm run build # 根目录先构建 components 和 utils 分包，确保 utils 分包构建因为 components 使用到 utils 分包
 $ cd ./website # 确保进入 website 文件夹
 $ npm run build
 ```
