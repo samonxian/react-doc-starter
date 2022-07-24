@@ -6,5 +6,5 @@
     "moduleResolution": "node",
     "types": ["vitest/globals"]
   },
-  "include": ["vite.config.ts", "vite.file.config.ts", "tests", "src/***、__tests__/"]
+  "include": ["vite.config.ts", "tests", "src/**/__tests__"]
 }

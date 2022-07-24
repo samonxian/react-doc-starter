@@ -14,13 +14,12 @@
     "tsc:es": "tsc --declarationDir es",
     "tsc:lib": "tsc --declarationDir lib",
     "tsc": "npm run tsc:lib && npm run tsc:es",
-    "clean": "rimraf lib es dist",
+    "clean": "rimraf lib es dist tsconfig.tsbuildinfo",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "vite": "vite",
-    "build:lib": "vite build",
-    "build:file": "node ./scripts/buildFiles.js",
-    "build": "npm run eslint && npm run clean && npm run tsc && npm run build:file && npm run build:lib"
+    "build:only": "vite build",
+    "build": "npm run eslint && npm run clean && npm run tsc && vite build"
   },
   "dependencies": {
     "business-utils": "^0.0.3",
@@ -48,6 +47,7 @@
     "happy-dom": "^6.0.2",
     "react-test-renderer": "^17.0.2",
     "vitest": "^0.18.0",
-    "vite": "^2.9.12"
+    "vite-plugin-build": "^0.2.2",
+    "vite": "^3.0.2"
   }
 }

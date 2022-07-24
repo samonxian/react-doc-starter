@@ -2,9 +2,10 @@
 
 import { defineConfig } from 'vite';
 import path from 'path';
-import { commonConfig } from './vite.file.config';
+import react from '@vitejs/plugin-react';
+import decamelize from 'decamelize';
+import { buildPlugin } from 'vite-plugin-build';
 
-// 在 UMD 构建模式下为外部依赖提供一个全局变量
 export const GLOBALS = {
   react: 'React',
   'react-dom': 'ReactDOM',
@@ -21,19 +22,54 @@ export const EXTERNAL = ['react', 'react-dom', 'antd', 'classnames', 'recharts',
 // https://vitejs.dev/config/
 export default defineConfig(() => {
   return {
-    ...commonConfig,
-    build: {
-      emptyOutDir: false,
-      rollupOptions: {
-        external: EXTERNAL,
-        output: { globals: GLOBALS },
+    plugins: [
+      react(),
+      buildPlugin({
+        libBuild: {
+          buildOptions: {
+            rollupOptions: {
+              external: EXTERNAL,
+              output: { globals: GLOBALS },
+            },
+            lib: {
+              entry: path.resolve(__dirname, 'src/index.ts'),
+              name: 'RbacComponents',
+              fileName: (format) => `rbac-components.${format}.js`,
+            },
+          },
+        },
+      }),
+    ],
+    css: {
+      modules: {
+        localsConvention: 'camelCaseOnly',
+        generateScopedName: (name: string, filename: string) => {
+          const match = filename.replace(/\\/, '/').match(/.*\/src\/(.*)\/(.*)\.module\..*/);
+
+          if (match) {
+            let prefixName = match[1].replace(/\//g, '-');
+            if (match[2] !== 'index') {
+              prefixName += `-${match[2]}`;
+            }
+            return `rabc-${decamelize(prefixName, '-')}__${name}`;
+          }
+
+          return `rabc-${name}`;
+        },
       },
-      lib: {
-        entry: path.resolve(__dirname, 'src/index.ts'),
-        name: 'RbacComponents',
-        fileName: (format) => `rbac-components.${format}.js`,
+      postcss: {},
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+        },
       },
-      minify: true,
+    },
+    resolve: {
+      alias: [
+        // fix less import by: @import ~
+        // less import no support webpack alias '~' · Issue #2185 · vitejs/vite
+        { find: /^~/, replacement: '' },
+      ],
     },
     test: {
       environment: 'happy-dom',
